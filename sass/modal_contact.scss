@@ -1,0 +1,116 @@
+.modale_contact {
+
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    &_fond {
+        width: 100%;
+        height: 100%;
+        background: var(--color7);
+        opacity: 0.8;
+        position: absolute;
+        z-index:0;
+
+    }
+
+    p {
+        label {
+            color: black;
+        }
+    }
+
+    &_bloc {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_content {
+        max-width: 597px;
+        width: 597px;
+        max-height: 769px;
+        height: 769px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color:var(--color);
+        padding-top: 50px;
+        z-index: 1;
+
+        &_bloc {
+            &_title {
+
+                width: 100%;
+
+            }
+        }
+
+        &_title {
+            height: 48px;
+            width: 100%;
+            background-image: url('assets/images/Contact.png');
+            background-repeat: repeat;
+        }
+
+        .wpcf7 {
+            width: 263px;
+
+            &-form {
+
+                p {
+                    input {}
+
+                    label {
+                        span {
+                            input {
+                                margin-top: 15px;
+                                width: 263px;
+                                height: 40px;
+                                border-radius: 8px;
+                                border: solid 1px;
+
+                                &.wpcf7-submit {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                            }
+
+                            textarea {
+                                margin-top: 15px;
+                                width: 263px;
+                                border-radius: 8px;
+                                border: solid 1px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bloc_bouton_envoie {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                p {
+
+                    input {
+                        width: 263px;
+                        height: 50px;
+                    }
+                }
+
+            }
+        }
+    }
+
+}

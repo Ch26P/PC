@@ -1,0 +1,26 @@
+.content {
+display: flex;
+flex-direction: column;
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin:50px 0 50px 0;
+
+}
+    .content_supports {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .supports {
+
+            &.tablet {
+                height: 500px;
+            }
+
+            &.smartphone {
+                height: 300px;
+            }
+        }
+    }
+}

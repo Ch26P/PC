@@ -24,11 +24,11 @@ function theme_PCportofolio_assets()
 {
 
     wp_enqueue_style('PCportofolio-style', get_stylesheet_uri(), array());  //css
-/*
+
     wp_enqueue_script('jquery', "//code.jquery.com/jquery-1.12.0.min.js");
     wp_enqueue_script('modal-contact', get_stylesheet_directory_uri() . '/js/modal_contact.js', [], 1.0, true);
 
-    // Charger des scripts spécifique pour la front page
+/*    // Charger des scripts spécifique pour la front page
     if (is_front_page()) {
         wp_enqueue_script(
             'more_pictures',
@@ -87,7 +87,26 @@ function themename_custom_logo_setup() {
 add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
 */
 
+
+/*hook filter menu 'header'*/
+
+function add_contact_link_to_menu_header($items, $args)
+{
+    if ($args->theme_location == 'header') {
+      //  $admin_url = admin_url();
+        $items .= '<li class="lien_contact"><a href=# >CONTACTS</a></li>';
+    }
+    return $items;
+};
+
+
+
+
+
+
 add_action('init', 'PCportofolio_init');
 add_action('after_setup_theme', 'theme_PCportofolio');
 add_action('wp_enqueue_scripts', 'theme_PCportofolio_assets');
+
+add_filter('wp_nav_menu_items', 'add_contact_link_to_menu_header', 10, 2);
 ?>
