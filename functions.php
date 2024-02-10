@@ -17,6 +17,9 @@ function theme_PCportofolio()
 
     add_image_size('hero', 1440, 962, true);
     add_image_size('galerie', 600, 520, true);
+    add_image_size('ordi', 646, true);
+    add_image_size('tab', 276, true);
+    add_image_size('phone', 132, true);
 }
 
 
@@ -27,6 +30,9 @@ function theme_PCportofolio_assets()
 
     wp_enqueue_script('jquery', "//code.jquery.com/jquery-1.12.0.min.js");
     wp_enqueue_script('modal-contact', get_stylesheet_directory_uri() . '/js/modal_contact.js', [], 1.0, true);
+
+
+    wp_enqueue_script('Font-Awesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 
 /*    // Charger des scripts spécifique pour la front page
     if (is_front_page()) {

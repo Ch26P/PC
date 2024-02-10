@@ -15,6 +15,7 @@ Tags:
 Text Domain: PortofolioChris
 */
 /****************************/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 /****general****/
 :root {
   /*variable*/
@@ -229,6 +230,7 @@ header .container_navbar .container_menus .menu-header-container ul li a {
 }
 .content .content_supports {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -237,6 +239,48 @@ header .container_navbar .container_menus .menu-header-container ul li a {
 }
 .content .content_supports .supports.smartphone {
   height: 300px;
+}
+.content .content_supports .computer {
+  position: relative;
+}
+.content .content_supports .computer .bloc_img_computer {
+  width: 651px;
+  height: 413px;
+  position: absolute;
+  top: 42px;
+  left: 153px;
+  overflow: scroll;
+}
+.content .content_supports .computer .bloc_img_computer .img_computer {
+  width: 100%;
+}
+.content .content_supports .tablet {
+  position: relative;
+}
+.content .content_supports .tablet .bloc_img_tablet {
+  width: 276px;
+  height: 439px;
+  position: absolute;
+  top: 31px;
+  left: 29px;
+  overflow: scroll;
+}
+.content .content_supports .tablet .bloc_img_tablet .img_tablet {
+  width: 100%;
+}
+.content .content_supports .smartphone {
+  position: relative;
+}
+.content .content_supports .smartphone .bloc_img_smartphone {
+  width: 129px;
+  height: 229px;
+  position: absolute;
+  top: 32px;
+  left: 11px;
+  overflow: scroll;
+}
+.content .content_supports .smartphone .bloc_img_smartphone .img_smartphone {
+  width: 100%;
 }
 
 /**footer*/
