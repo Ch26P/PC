@@ -1,20 +1,21 @@
 .content {
     display: flex;
     flex-direction: column;
-
+&_rea_info{
+    text-align: center;
     h1 {
-        text-align: center;
+        
         text-transform: uppercase;
-        margin: 50px 0 50px 0;
+      //  margin: 50px 0 50px 0;
 
     }
-
+}
     .content_supports {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
-      //  position: relative;
+        //  position: relative;
 
         .supports {
 
@@ -29,6 +30,8 @@
 
         .computer {
             position: relative;
+         //   margin-top: 15px;
+
             .bloc_img_computer {
 
                 width: 651px;
@@ -36,7 +39,7 @@
                 position: absolute;
                 top: 42px;
                 left: 153px;
-             //   text-overflow: clip;
+                //   text-overflow: clip;
                 overflow: scroll;
 
                 .img_computer {
@@ -47,6 +50,8 @@
 
         .tablet {
             position: relative;
+         //   margin-top: 15px;
+
             .bloc_img_tablet {
 
                 width: 276px;
@@ -54,7 +59,7 @@
                 position: absolute;
                 top: 31px;
                 left: 29px;
-             //   text-overflow: clip;
+                //   text-overflow: clip;
                 overflow: scroll;
 
                 .img_tablet {
@@ -65,6 +70,8 @@
 
         .smartphone {
             position: relative;
+         //   margin-top: 15px;
+
             .bloc_img_smartphone {
 
                 width: 129px;
@@ -72,11 +79,67 @@
                 position: absolute;
                 top: 32px;
                 left: 11px;
-             //   text-overflow: clip;
+                //   text-overflow: clip;
                 overflow: scroll;
 
                 .img_smartphone {
                     width: 100%;
+                }
+            }
+        }
+    }
+
+    .info_realisation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &_techno {
+            display: flex;
+            //  flex-direction: column;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 15px;
+            justify-content: center;
+
+            i {
+                font-size: 100px;
+            }
+
+            &_left {
+                //  width: 50%;
+                border: solid 1px;
+
+            }
+
+            &_right {
+                //  width: 50%;
+                border: solid 1px;
+
+                ul {
+                    display: flex;
+                    list-style: none;
+
+                    li {
+                        margin: 0 10px 0 10px;
+                    }
+                }
+            }
+        }
+
+        .bloc_description {
+            display: flex;
+            justify-content: space-around;
+
+            .description {
+                width: 40%;
+
+                &.desc_m {
+
+                }
+
+                &.desc_r {
+              
                 }
             }
         }

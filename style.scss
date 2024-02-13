@@ -28,15 +28,15 @@ Text Domain: PortofolioChris
     --color2: #FE5858; // var(--color2)
     --color3: #FFD6D6; // var(--color3)
 
-    --color5: #D8D8D8; // var(--color5)
+    --color-JS: #D6BE00; // var(--color-JS)
 
-    --color6: #E5E5E5; // var(--color6)
+    --color-htlm5: #E44D26; // var(--color-html5)
 
-    --color7: #C4C4C4; // var(--color7)
+    --color-css3: #1572B6; // var(--color-css3)
 
-    --color8: #000000; // var(--color8)
+    --color-sass: #000000; // var(--color8)
 
-    --color9: #313144; // var(--color9)
+    --color-php: #868db6; // var(--color-php)
 
 
 
@@ -62,8 +62,8 @@ Text Domain: PortofolioChris
 
 body {
     width: 100%;
-  //  max-width: 1440px;
- /*   margin: auto;
+    //  max-width: 1440px;
+    /*   margin: auto;
     overflow-x: hidden;
     font-family: 'Space Mono', monospace;*/
 }
@@ -82,7 +82,7 @@ a {
 h1 {
     //   font-family: Mono;
     font-size: 38px;
- /*   font-weight: 800;
+    /*   font-weight: 800;
     line-height: 46px;
     letter-spacing: 0em;
     text-align: center;
@@ -104,6 +104,7 @@ h2 {
 }
 
 h3 {
+    text-align: center;
     //  font-family: Mono;
     font-size: 20px;
     font-weight: 700;
@@ -133,6 +134,21 @@ a {
     text-decoration: none;
 }
 
+.fa-js {
+    color: #D6BE00;
+}
+
+.fa-html5 {
+    color: #E44D26;
+}
+
+.fa-css3 {
+    color: #1572B6;
+}
+
+.fa-php {
+    color: #868db6;
+}
 
 
 
@@ -142,14 +158,15 @@ a {
 header {
     position: sticky;
     top: 0;
-    background: linear-gradient(to left, blue, white);
+  //  background: linear-gradient(to left, blue, white);
+
     //  border-bottom: solid var(--color1); 
-  //  z-index: 2;
+    //  z-index: 2;
     .container_navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
-     
+
 
         .img_logo {
             height: 150px;
@@ -168,13 +185,18 @@ header {
                     li {
                         list-style-type: none;
                         //   margin: auto;
-                        margin:0 15px 0 15px;
+                        margin: 0 15px 0 15px;
+
+                        background-color:black;
+                        padding: 10px;
+                        border-radius: 25px;
+
 
                         a {
                             text-decoration: none;
                             text-align: center;
                             text-transform: uppercase;
-                            color:white;
+                            color: white;
                             //   margin: 0 10px 0 10px;
                         }
                     }
