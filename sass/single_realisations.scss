@@ -1,20 +1,24 @@
-.content {
+.content_rea {
     display: flex;
     flex-direction: column;
-&_rea_info{
-    text-align: center;
-    h1 {
-        
-        text-transform: uppercase;
-      //  margin: 50px 0 50px 0;
 
+    &_info {
+        text-align: center;
+
+        h1 {
+
+            text-transform: uppercase;
+            //  margin: 50px 0 50px 0;
+
+        }
     }
-}
+
     .content_supports {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
+        gap: 40px;
         //  position: relative;
 
         .supports {
@@ -30,7 +34,7 @@
 
         .computer {
             position: relative;
-         //   margin-top: 15px;
+            //   margin-top: 15px;
 
             .bloc_img_computer {
 
@@ -44,13 +48,29 @@
 
                 .img_computer {
                     width: 100%;
+
+                    &.vide {
+                        width: 100%;
+                        height: 100%;
+                        background-color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        p {
+                            display: block;
+                            margin: 0;
+                            text-align: center;
+                        }
+                    }
                 }
+
             }
         }
 
         .tablet {
             position: relative;
-         //   margin-top: 15px;
+            //   margin-top: 15px;
 
             .bloc_img_tablet {
 
@@ -64,13 +84,28 @@
 
                 .img_tablet {
                     width: 100%;
+
+                    &.vide {
+                        width: 100%;
+                        height: 100%;
+                        background-color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        p {
+                            display: block;
+                            margin: 0;
+                            text-align: center;
+                        }
+                    }
                 }
             }
         }
 
         .smartphone {
             position: relative;
-         //   margin-top: 15px;
+            //   margin-top: 15px;
 
             .bloc_img_smartphone {
 
@@ -84,6 +119,21 @@
 
                 .img_smartphone {
                     width: 100%;
+
+                    &.vide {
+                        width: 100%;
+                        height: 100%;
+                        background-color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        p {
+                            display: block;
+                            margin: 0;
+                            text-align: center;
+                        }
+                    }
                 }
             }
         }
@@ -108,20 +158,34 @@
 
             &_left {
                 //  width: 50%;
-                border: solid 1px;
+                //  border: solid 1px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                i {
+                    margin: 16px 0;
+                }
 
             }
 
             &_right {
                 //  width: 50%;
-                border: solid 1px;
+                //   border: solid 1px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 ul {
                     display: flex;
                     list-style: none;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    align-items: center;
+                    justify-content: center;
 
                     li {
-                        margin: 0 10px 0 10px;
+                        //  margin: 0 10px 0 10px;
                     }
                 }
             }
@@ -130,16 +194,27 @@
         .bloc_description {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 0 20px;
+            gap: 40px;
 
             .description {
                 width: 40%;
+                min-width: 250px;
 
-                &.desc_m {
+                /*   &.desc_m {
 
                 }
-
+*/
                 &.desc_r {
-              
+                    .lien_git {
+                        text-align: center;
+
+                        i {
+                            font-size: 70px;
+                        }
+
+                    }
                 }
             }
         }

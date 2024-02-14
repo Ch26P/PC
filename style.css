@@ -65,6 +65,7 @@ h1 {
       letter-spacing: 0em;
       text-align: center;
   */
+  margin-top: 0;
 }
 
 h2 {
@@ -123,6 +124,7 @@ a {
 header {
   position: sticky;
   top: 0;
+  z-index: 20;
 }
 header .container_navbar {
   display: flex;
@@ -238,7 +240,7 @@ header .container_navbar .container_menus .menu-header-container ul li a {
 
 /*single realisations
 ------------------------------------------------*/
-.content {
+.content_rea {
   display: flex;
   flex-direction: column;
 }
@@ -248,22 +250,23 @@ header .container_navbar .container_menus .menu-header-container ul li a {
 .content_rea_info h1 {
   text-transform: uppercase;
 }
-.content .content_supports {
+.content_rea .content_supports {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  gap: 40px;
 }
-.content .content_supports .supports.tablet {
+.content_rea .content_supports .supports.tablet {
   height: 500px;
 }
-.content .content_supports .supports.smartphone {
+.content_rea .content_supports .supports.smartphone {
   height: 300px;
 }
-.content .content_supports .computer {
+.content_rea .content_supports .computer {
   position: relative;
 }
-.content .content_supports .computer .bloc_img_computer {
+.content_rea .content_supports .computer .bloc_img_computer {
   width: 651px;
   height: 413px;
   position: absolute;
@@ -271,13 +274,26 @@ header .container_navbar .container_menus .menu-header-container ul li a {
   left: 153px;
   overflow: scroll;
 }
-.content .content_supports .computer .bloc_img_computer .img_computer {
+.content_rea .content_supports .computer .bloc_img_computer .img_computer {
   width: 100%;
 }
-.content .content_supports .tablet {
+.content_rea .content_supports .computer .bloc_img_computer .img_computer.vide {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content_rea .content_supports .computer .bloc_img_computer .img_computer.vide p {
+  display: block;
+  margin: 0;
+  text-align: center;
+}
+.content_rea .content_supports .tablet {
   position: relative;
 }
-.content .content_supports .tablet .bloc_img_tablet {
+.content_rea .content_supports .tablet .bloc_img_tablet {
   width: 276px;
   height: 439px;
   position: absolute;
@@ -285,13 +301,26 @@ header .container_navbar .container_menus .menu-header-container ul li a {
   left: 29px;
   overflow: scroll;
 }
-.content .content_supports .tablet .bloc_img_tablet .img_tablet {
+.content_rea .content_supports .tablet .bloc_img_tablet .img_tablet {
   width: 100%;
 }
-.content .content_supports .smartphone {
+.content_rea .content_supports .tablet .bloc_img_tablet .img_tablet.vide {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content_rea .content_supports .tablet .bloc_img_tablet .img_tablet.vide p {
+  display: block;
+  margin: 0;
+  text-align: center;
+}
+.content_rea .content_supports .smartphone {
   position: relative;
 }
-.content .content_supports .smartphone .bloc_img_smartphone {
+.content_rea .content_supports .smartphone .bloc_img_smartphone {
   width: 129px;
   height: 229px;
   position: absolute;
@@ -299,44 +328,80 @@ header .container_navbar .container_menus .menu-header-container ul li a {
   left: 11px;
   overflow: scroll;
 }
-.content .content_supports .smartphone .bloc_img_smartphone .img_smartphone {
+.content_rea .content_supports .smartphone .bloc_img_smartphone .img_smartphone {
   width: 100%;
 }
-.content .info_realisation {
+.content_rea .content_supports .smartphone .bloc_img_smartphone .img_smartphone.vide {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content_rea .content_supports .smartphone .bloc_img_smartphone .img_smartphone.vide p {
+  display: block;
+  margin: 0;
+  text-align: center;
+}
+.content_rea .info_realisation {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.content .info_realisation_techno {
+.content_rea .info_realisation_techno {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   gap: 15px;
   justify-content: center;
 }
-.content .info_realisation_techno i {
+.content_rea .info_realisation_techno i {
   font-size: 100px;
 }
-.content .info_realisation_techno_left {
-  border: solid 1px;
+.content_rea .info_realisation_techno_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.content .info_realisation_techno_right {
-  border: solid 1px;
+.content_rea .info_realisation_techno_left i {
+  margin: 16px 0;
 }
-.content .info_realisation_techno_right ul {
+.content_rea .info_realisation_techno_right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content_rea .info_realisation_techno_right ul {
   display: flex;
   list-style: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
-.content .info_realisation_techno_right ul li {
-  margin: 0 10px 0 10px;
-}
-.content .info_realisation .bloc_description {
+.content_rea .info_realisation .bloc_description {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 20px;
+  gap: 40px;
 }
-.content .info_realisation .bloc_description .description {
+.content_rea .info_realisation .bloc_description .description {
   width: 40%;
+  min-width: 250px;
+  /*   &.desc_m {
+
+                  }
+  */
 }
+.content_rea .info_realisation .bloc_description .description.desc_r .lien_git {
+  text-align: center;
+}
+.content_rea .info_realisation .bloc_description .description.desc_r .lien_git i {
+  font-size: 70px;
+}
+
 /**footer*/
 footer .menu-footer-container {
   display: flex;
@@ -354,4 +419,46 @@ footer .menu-footer-container ul li a {
   text-align: center;
   color: #000000;
   margin: 0 10px 0 10px;
+}
+
+/*****************accueil*******************/
+#front_page {
+  background: #000000;
+}
+#front_page body *,
+#front_page h1,
+#front_page span {
+  color: white;
+}
+#front_page header .container_menus .menu-header-container ul li {
+  background-color: white;
+}
+#front_page header .container_menus .menu-header-container ul li a {
+  color: black;
+}
+
+.content_front {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.content_front .bloc_front {
+  width: 75%;
+  min-width: 300px;
+  background-color: white;
+}
+.content_front_img {
+  max-height: 800px;
+}
+.content_front_img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.content_front_title {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
