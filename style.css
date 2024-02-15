@@ -427,6 +427,11 @@ footer .menu-footer-container ul li a {
 }
 #front_page body *,
 #front_page h1,
+#front_page ul,
+#front_page li,
+#front_page form,
+#front_page option,
+#front_page p,
 #front_page span {
   color: white;
 }
@@ -442,23 +447,92 @@ footer .menu-footer-container ul li a {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  gap: 50px;
 }
 .content_front .bloc_front {
+  display: flex;
   width: 75%;
   min-width: 300px;
-  background-color: white;
-}
-.content_front_img {
-  max-height: 800px;
-}
-.content_front_img img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  border: solid 1px white;
+  border-radius: 30px;
+  /*  &_img {
+      img {
+          display: none;
+      }
+  }*/
 }
 .content_front_title {
   text-align: center;
+}
+.content_front_img {
+  flex-direction: column;
+}
+.content_front_img img {
+  display: none;
+  /*        object-fit: cover;
+  object-position: center;*/
+}
+.content_front_rea {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.content_front_rea_list {
+  text-align: center;
+}
+.content_front_rea_list h3 {
+  margin: 0 15px 0 15px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 25px;
+}
+.content_front_rea_affiche {
+  width: 800px;
+  display: flex;
+  justify-content: flex-end;
+  border: solid 1px white;
+  position: relative;
+}
+.content_front_rea_affiche .shape {
+  /*  float: left;
+  shape-outside: polygon(0px 0px, 0px 189px, 100.48% 94.71%, 200px 120px, 80.67% 37.17%);
+   */
+  width: 600px;
+  height: 550px;
+  -webkit-clip-path: polygon(76% 24.46%, 80.42% 24.97%, 85.4% 26.48%, 90% 29.28%, 94.15% 32.44%, 96.16% 35.64%, 101% 102.18%, 0% 100%);
+          clip-path: polygon(76% 24.46%, 80.42% 24.97%, 85.4% 26.48%, 90% 29.28%, 94.15% 32.44%, 96.16% 35.64%, 101% 102.18%, 0% 100%);
+  background-color: #fff;
+  opacity: 0.8;
+  z-index: 1;
+  right: 200px;
+  position: relative;
+}
+.content_front_rea_affiche .lamp-libre {
+  position: absolute;
+  right: -60px;
+  z-index: 0;
+  bottom: 45px;
+}
+.content_front_rea_affiche img.supports.computer {
+  width: 400px;
+  position: absolute;
+  bottom: 0px;
+  left: 197px;
+}
+.content_front_rea_affiche .img_computer_front {
+  width: 274px;
+  height: 173px;
+  position: absolute;
+  bottom: 36px;
+  left: 260px;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content_front_rea_affiche .img_computer_front p {
+  color: #000000 !important;
+  display: block;
 }/*# sourceMappingURL=style.css.map */

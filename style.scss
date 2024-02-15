@@ -253,8 +253,13 @@ footer {
     h3,
     h4,
     h5,
-    p,
+  
     a,*/
+    ul,
+    li,
+    form,
+    option,
+    p,
     span {
 
         //  font-family: 'Space Mono', monospace;
@@ -293,26 +298,116 @@ footer {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    gap: 50px;
 
     .bloc_front {
+        display: flex;
+
         width: 75%;
         min-width: 300px;
-        background-color: white;
-    }
+        //  background-color: white;
+        border: solid 1px white;
+        border-radius: 30px;
 
-    &_img {
-        max-height: 800px;
-
-        img {
-            height: 100%;
-            width: 100%;
-          //  height: 150px;
-            object-fit: cover;
-            object-position: center;
-        }
+        /*  &_img {
+            img {
+                display: none;
+            }
+        }*/
     }
 
     &_title {
         text-align: center;
     }
+
+    &_img {
+        //  max-height: 800px;
+        flex-direction: column;
+
+        img {
+            display: none;
+            //       height: 100%;
+            //      width: 100%;
+            //  height: 150px;
+            /*        object-fit: cover;
+            object-position: center;*/
+        }
+    }
+
+    &_rea {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+
+        &_list {
+            //  width: 500px;
+            text-align: center;
+
+            h3 {
+                margin: 0 15px 0 15px;
+                background-color: white;
+                padding: 10px;
+                border-radius: 25px;
+            }
+        }
+
+        &_affiche {
+            width: 800px;
+            display: flex;
+            justify-content: flex-end;
+            border: solid 1px white;
+            position: relative;
+
+            .shape {
+                /*  float: left;
+               shape-outside: polygon(0px 0px, 0px 189px, 100.48% 94.71%, 200px 120px, 80.67% 37.17%);
+                */
+                width: 600px;
+                height: 550px;
+
+                clip-path: polygon(76% 24.46%, 80.42% 24.97%, 85.4% 26.48%, 90% 29.28%, 94.15% 32.44%, 96.16% 35.64%, 101% 102.18%, 0% 100%);
+                background-color: #fff;
+                opacity: 0.8;
+                z-index: 1;
+                right: 200px;
+                position: relative;
+            }
+
+            .lamp-libre {
+                position: absolute;
+                right: -60px;
+                z-index: 0;
+                bottom: 45px;
+            }
+
+            img.supports.computer {
+                width: 400px;
+                //   display: none;
+                position: absolute;
+                bottom: 0px;
+                //  z-index: 2;
+                left: 197px;
+            }
+
+            .img_computer_front {
+                width: 274px;
+                height: 173px;
+                position: absolute;
+                bottom: 36px;
+                left: 260px;
+                text-align: center;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    color: #000000 !important;
+                    display: block;
+                }
+            }
+        }
+    }
+
 }
