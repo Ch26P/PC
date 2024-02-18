@@ -9,20 +9,20 @@ jQuery(document).ready(function ($) {
     $('nav .lien_contact').click(function () {
         $('.modale_contact').slideToggle();
 
-        $('#ref').val(referenceValue);
+    //    $('#ref').val(referenceValue);
 
     });
 
-    console.log("bonjour" + referenceValue);
-    console.log($("#ref"));
-    console.log($(' #menu-navigation li:last '));
-    console.log($('.modale_contact'));
-    var referenceValue = jQuery("#description ul li:first span").html();//récuper la valeur pour la reference
+ //   console.log("bonjour" + referenceValue);
+ //   console.log($("#ref"));
+ //   console.log($(' #menu-navigation li:last '));
+ //   console.log($('.modale_contact'));
+ /*   var referenceValue = jQuery("#description ul li:first span").html();//récuper la valeur pour la reference
     $('.content_photo_medium_left button').click(function () {
         $('.modale_contact').slideToggle();
 
         $('#ref').val(referenceValue);//ajout valeur pour ref du formulaire contact
-    });
+    });*/
 
     //fermeture modal contact
 

@@ -38,13 +38,6 @@
             </div>
 
         </div>
-        <!--
-            <div class="burger_menu">
 
-                <?php
-                wp_nav_menu(['theme_location' => 'header', 'container' => false]) //affichage menu
-                ?>
-            </div>
--->
     </nav>
 </header>

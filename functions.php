@@ -14,12 +14,13 @@ function theme_PCportofolio()
     register_nav_menu('footer', 'pied de page');
 
     // Définir d'autres tailles d'images : 
-
+/*
     add_image_size('hero', 1440, 962, true);
     add_image_size('galerie', 600, 520, true);
     add_image_size('ordi', 646, true);
     add_image_size('tab', 276, true);
     add_image_size('phone', 132, true);
+*/
 }
 
 
@@ -43,24 +44,11 @@ function theme_PCportofolio_assets()
             '1.0',
             true
         );
+        wp_enqueue_script('front-anim-scroll',  get_stylesheet_directory_uri() . '/js/front-anim-scroll.js', [], 1.0, true); // true indique enregitrer en fin de chargement pager
     };
-    /*   wp_enqueue_script(
-        'lightbox-ajax',
-        get_template_directory_uri() . '/js/lightbox-ajax.js',
-        ['jquery'],
-        '1.0',
-        true
-    );
 
-    wp_enqueue_script(
-        'lightbox-in-ajax',
-        get_template_directory_uri() . '/js/lightbox_in.js',
-        ['jquery'],
-        '1.0',
-        true
-    );
-    */
-    wp_enqueue_script('anim-scroll',  get_stylesheet_directory_uri() . '/js/anim-scroll.js', [], 1.0, true); // true indique enregitrer en fin de chargement pager
+    wp_enqueue_script('rea-anim-scroll',  get_stylesheet_directory_uri() . '/js/rea-anim-scroll.js', [], 1.0, true); // true indique enregitrer en fin de chargement pager
+    
 }
 
 
@@ -79,20 +67,6 @@ function PCportofolio_init()
 
     ]);
 }
-/*
-function themename_custom_logo_setup() {
-	$defaults = array(
-		'height'               => 100,
-		'width'                => 100,
-		'flex-height'          => true,
-		'flex-width'           => true,
-		'header-text'          => array( 'site-title', 'site-description' ),
-		'unlink-homepage-logo' => true, 
-	);
-	add_theme_support( 'custom-logo', $defaults );
-}
-add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
-*/
 
 
 /*hook filter menu 'header'*/
@@ -100,7 +74,6 @@ add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
 function add_contact_link_to_menu_header($items, $args)
 {
     if ($args->theme_location == 'header') {
-        //  $admin_url = admin_url();
         $items .= '<li class="lien_contact"><a href=# >CONTACTS</a></li>';
     }
     return $items;
@@ -111,7 +84,7 @@ function front_filtre_rea()
 {
 
     // Vérification de sécurité
-    /* */
+
     if (
         !isset($_REQUEST['nonce']) or
         !wp_verify_nonce($_REQUEST['nonce'], 'front_filtre_rea')
@@ -119,41 +92,10 @@ function front_filtre_rea()
         wp_send_json_error("Vous n’avez pas l’autorisation d’effectuer cette action.", 403);
     }
 
-    /**************************************recuperer les valeur des taxomanie dans une varaible*********************************************************************** */
-    /*
-
-    $all_categorie = array_map(function ($term) {
-        return $term->name;
-    }, get_terms("categorie"));
-
-
-    */
-    /*exemple avec foreach
-    foreach ((get_terms("categorie")) as $terms) {
-    return $terms->name; }
-    */
-    /*
-    $all_format = array_map(function ($term) {
-        return $term->name;
-    }, get_terms("format"));
-
- */
 
     /******************************************************************************************************************** */
     //recuperation des variables
     $post_id = $_POST["list"];
-    /*  $order = $_POST['order'];
-    if (
-
-        (isset($_POST["categorie"]) && is_string($_POST["categorie"])) //verifier $_POST[] exist et si bien une chaine et si elle n est pas vide
-        && $_POST["categorie"] !== ""
-    ) {
-        $categorie = $_POST["categorie"];
-    } else {
-        $categorie = $all_categorie;
-    }
-
- */
 
     $query = new WP_Query(
 
@@ -182,11 +124,7 @@ function front_filtre_rea()
                     <?php if ($name === "ordinateur") {
                             if (get_field("ordinateur")) {
                                 echo    '<a  href="' . get_permalink() . '"title="cliquer pour voir la fiche de cette réalisation" target="blank"><img class="img_computer" src="' . $value . ' "></a>';
-                                /*   if (get_field("lien_site")) {
-                                echo    '<a  href="' . esc_attr(get_field('lien_site')) . '" title="cliquer pour visiter le site" target="blank"><img class="img_computer" src="' . $value . ' "></a>';
-                            } else {
-                                echo '<img class="img_computer" src="' . $value . '">';
-                            }*/
+
                             } else {
                                 echo ' <a href="' . get_permalink() . '"title="cliquer pour voir la fiche de cette réalisation" target="blank"><div class="img_computer vide">
 										<p>il n y a pas d aperçu disponible</p></br>
@@ -207,11 +145,8 @@ function front_filtre_rea()
 
         // Envoyer les données au navigateur
         wp_send_json_success(array('html' => $new_page_filter));
-        /*  if(get_field("ordinateur")){}
-        else{}  */
-    }  /*else {
-        wp_send_json_success(array('html' => ""));
-    }*/
+
+    }  
 
     wp_reset_postdata(); // ! important réinisialise les donéé du post apres la boucle
 

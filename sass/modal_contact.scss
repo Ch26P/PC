@@ -21,7 +21,7 @@
 
     p {
         label {
-            color: black;
+            color: black !important;
         }
     }
 
@@ -35,38 +35,39 @@
 
     &_content {
         max-width: 597px;
-        width: 597px;
+        width: 60%;
+        min-width: 280px;
         max-height: 769px;
         height: 769px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color:var(--color);
+        background-color:#1572B6;
         padding-top: 50px;
         z-index: 1;
 
         &_bloc {
-            &_title {
+            &_title {display: flex;
+                justify-content: center;
+                align-items: center;
 
                 width: 100%;
+                .img_logo{
+                    width: 80px;
+                }
 
             }
         }
 
-        &_title {
-            height: 48px;
-            width: 100%;
-            background-image: url('assets/images/Contact.png');
-            background-repeat: repeat;
-        }
+
 
         .wpcf7 {
             width: 263px;
 
             &-form {
 
-                p {
+                p { text-align: center;
                     input {}
 
                     label {

@@ -1,3 +1,141 @@
+/*****************keyframe**********************/
+
+@keyframes fade_title_desc {
+    0% {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+
+    33% {
+        opacity: 0.1;
+    }
+
+    66% {
+        opacity: 0.2;
+    }
+
+    94% {
+        //   transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    97% {
+        //  transform: translateY(px);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade_p_desc_r {
+    0% {
+        transform: translateX(800px);
+        opacity: 0;
+    }
+
+    33% {
+        opacity: 0.1;
+    }
+
+    66% {
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade_p_desc_m {
+    0% {
+        transform: translateX(-800px);
+        opacity: 0;
+    }
+
+    33% {
+        opacity: 0.1;
+    }
+
+    66% {
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade_lien_git {
+    0% {
+        transform: scale(0);
+
+    }
+
+    100% {
+        transform: scale(1) translate(0, 0);
+        // opacity: 1;
+    }
+}
+
+@keyframes fade_version {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes title_h1_rea {
+    0% {
+        transform: translateX(-500px);
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes title_h2_rea {
+    0% {
+        transform: translateX(500px);
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes title_p_rea {
+    0% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        opacity: 1;
+    }
+}
+
+/*******************************************************/
 .content_rea {
     display: flex;
     flex-direction: column;
@@ -9,7 +147,19 @@
 
             text-transform: uppercase;
             //  margin: 50px 0 50px 0;
+            opacity: 0;
+            animation: title_h1_rea 1400ms both;
 
+        }
+
+        p {
+            opacity: 0;
+            animation: title_p_rea 900ms 1400ms both;
+        }
+
+        h2 {
+            opacity: 0;
+            animation: title_h2_rea 1400ms 2300ms both;
         }
     }
 
@@ -25,16 +175,47 @@
 
             &.tablet {
                 height: 500px;
+
+                @media all and (max-width: 1000px) {
+                    height: 300px;
+                }
+
+                /*
+                @media all and (max-width: 450px) {
+                    font-size: 48px;
+                }*/
             }
 
             &.smartphone {
                 height: 300px;
+
+                /*   @media all and (max-width: 600px) {
+                    height: 300px;
+                }
+            
+                @media all and (max-width: 450px) {
+                    font-size: 48px;
+                } */
+
             }
         }
 
         .computer {
             position: relative;
             //   margin-top: 15px;
+
+            img {
+                @media all and (max-width: 1000px) {
+                    width: 500px;
+                }
+
+                @media all and (max-width: 520px) {
+                    width: 300px;
+
+                }
+            }
+
+            /* */
 
             .bloc_img_computer {
 
@@ -45,6 +226,21 @@
                 left: 153px;
                 //   text-overflow: clip;
                 overflow: scroll;
+
+                @media all and (max-width: 1000px) {
+                    width: 338px;
+                    height: 214px;
+                    top: 23px;
+                    left: 80px;
+                }
+
+                @media all and (max-width: 520px) {
+                    width: 206px;
+                    height: 127px;
+                    top: 14px;
+                    left: 47px;
+
+                }
 
                 .img_computer {
                     width: 100%;
@@ -82,6 +278,19 @@
                 //   text-overflow: clip;
                 overflow: scroll;
 
+                @media all and (max-width: 1000px) {
+                    width: 164px;
+                    height: 261px;
+                    top: 20px;
+                    left: 17px;
+
+                }
+
+                /*
+                @media all and (max-width: 450px) {
+                    font-size: 48px;
+                }
+*/
                 .img_tablet {
                     width: 100%;
 
@@ -151,6 +360,12 @@
             width: 100%;
             gap: 15px;
             justify-content: center;
+            ul{
+                @media all and (max-width: 750px) {
+                    padding: 0;
+                }
+             //   
+            }
 
             i {
                 font-size: 100px;
@@ -165,6 +380,23 @@
 
                 i {
                     margin: 16px 0;
+                    transform: scale(0);
+                }
+
+                p {
+                    opacity: 0;
+                    transform: translateY(-100px);
+                }
+
+                &.left-animation {
+                    i {
+
+                        animation: fade_lien_git 1000ms 200ms both;
+                    }
+
+                    p {
+                        animation: fade_version 600ms 1300ms both;
+                    }
                 }
 
             }
@@ -185,7 +417,30 @@
                     justify-content: center;
 
                     li {
+
                         //  margin: 0 10px 0 10px;
+                        i {
+                            //   margin: 16px 0;
+                            transform: scale(0);
+                        }
+                    }
+
+
+
+                    p {
+                        opacity: 0;
+                        transform: translateY(-100px);
+                    }
+                }
+
+                &.right-animation {
+                    i {
+
+                        animation: fade_lien_git 1000ms 200ms both;
+                    }
+
+                    p {
+                        animation: fade_version 600ms 1300ms both;
                     }
                 }
             }
@@ -201,22 +456,84 @@
             .description {
                 width: 40%;
                 min-width: 250px;
-
-                /*   &.desc_m {
+                @media all and (max-width: 600px) {
+                    width: 80%;
 
                 }
-*/
+
+                &.desc_m {
+
+                    h3 {
+                        opacity: 0;
+                        //  transform: translateY(-200px);
+                    }
+
+                    p {
+                        //   transform: translateX(-800px);
+                        opacity: 0;
+                    }
+
+                    &.desc-animation {
+
+                        h3 {
+                            animation: fade_title_desc 1000ms 400ms both;
+                        }
+
+                        p {
+                            animation: fade_p_desc_m 1000ms 400ms both;
+                        }
+                    }
+                }
+
+
                 &.desc_r {
                     .lien_git {
                         text-align: center;
 
                         i {
                             font-size: 70px;
+                            //  transform: scale(0) ;
+
+                        }
+
+                    }
+
+                    h3 {
+                        opacity: 0;
+                        //   transform: translateY(-200px);
+                    }
+
+                    p {
+                        //  transform: translateX(800px);
+                        opacity: 0;
+                    }
+
+                    &.desc-animation {
+
+                        h3 {
+                            animation: fade_title_desc 1000ms 400ms both;
+                        }
+
+                        p {
+                            animation: fade_p_desc_r 1000ms 400ms both;
+                        }
+
+                        .lien_git {
+
+
+                            i {
+                                font-size: 70px;
+                                animation: fade_lien_git 1000ms 2000ms both;
+
+                            }
+
                         }
 
                     }
                 }
             }
+
+
         }
     }
 }

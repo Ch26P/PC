@@ -15,7 +15,7 @@ while (have_posts()) :
 
 			<div class="content_supports">
 				<div class="computer">
-					<img class="supports computer" src="<?php echo get_template_directory_uri() . ' /assets/images/computer-libre.webp' ?> ">
+					<img class="supports computer" src="<?php echo get_template_directory_uri() . '/assets/images/computer-libre.webp' ?> ">
 					<?php
 					$list_champs = get_fields();
 					if (get_fields() !== false) : ?>
@@ -26,7 +26,7 @@ while (have_posts()) :
 									<?php
 									if (get_field("ordinateur")) {
 										if (get_field("lien_site")) {
-											echo	'<a  href="'. esc_attr(get_field('lien_site')) .'" title="cliquer pour visiter le site" target="blank"><img class="img_computer" src="' . $value . ' "></a>';
+											echo	'<a  href="' . esc_attr(get_field('lien_site')) . '" title="cliquer pour visiter le site" target="blank"><img class="img_computer" src="' . $value . ' "></a>';
 										} else {
 											echo '<img class="img_computer" src="' . $value . '">';
 										}
@@ -47,7 +47,7 @@ while (have_posts()) :
 				<?php if (get_field('responsive') === 'oui') : ?>
 
 					<div class="tablet">
-						<img class="supports tablet" src="<?php echo get_template_directory_uri() . ' /assets/images/tablet-libre' ?> ">
+						<img class="supports tablet" src="<?php echo get_template_directory_uri() . '/assets/images/tablet-libre' ?> ">
 						<?php
 						$list_champs = get_fields();
 						if (get_fields() !== false) : ?>
@@ -57,7 +57,7 @@ while (have_posts()) :
 										<?php
 										if (get_field("tablet")) {
 											if (get_field("lien_site")) {
-												echo	'<a  href="'.esc_attr(get_field('lien_site')).'" title="cliquer pour visiter le site" target="blank"><img class="img_tablet" src="' . $value . ' "></a>';
+												echo	'<a  href="' . esc_attr(get_field('lien_site')) . '" title="cliquer pour visiter le site" target="blank"><img class="img_tablet" src="' . $value . '"></a>';
 											} else {
 												echo '<img class="img_tablet" src="' . $value . '">';
 											}
@@ -76,7 +76,7 @@ while (have_posts()) :
 						?>
 					</div>
 					<div class="smartphone">
-						<img class="supports smartphone" src="<?php echo get_template_directory_uri() . ' /assets/images/smartphone-libre.webp' ?> ">
+						<img class="supports smartphone" src="<?php echo get_template_directory_uri() . '/assets/images/smartphone-libre.webp' ?> ">
 						<?php
 						$list_champs = get_fields();
 						if (get_fields() !== false) : ?>
@@ -86,11 +86,12 @@ while (have_posts()) :
 									<div class="bloc_img_smartphone">
 										<?php
 										if (get_field("smartphone")) {
-										if (get_field("lien_site")) {
-											echo	'<a  href="'.esc_attr(get_field('lien_site')).'" title="cliquer pour visiter le site" target="blank"><img class="img_smartphone" src="' . $value . ' "></a>';
+											if (get_field("lien_site")) {
+												echo	'<a  href="' . esc_attr(get_field('lien_site')) . '"title="cliquer pour visiter le site" target="blank"><img class="img_smartphone" src="' . $value . '"></a>';
+											} else {
+												echo '<img class="img_smartphone" src="' . $value . '">';
+											}
 										} else {
-											echo '<img class="img_smartphone" src="' . $value . '">';
-										}}else {
 											echo '<div class="img_smartphone vide">
 											<p>il n y a pas d aperçu disponible</p>
 											
@@ -132,6 +133,8 @@ while (have_posts()) :
 									echo '<p>version:' . esc_html(get_field('version')) . '</p>';
 								}
 							}
+						}/**/ else {
+							echo'<p class ="ss_cms">Ce site n utilise pas de CMS</p>';
 						} ?>
 					</div>
 					<div class="info_realisation_techno_right">
@@ -162,6 +165,8 @@ while (have_posts()) :
 
 							if (get_field('responsive') === "oui") {
 								echo '<p> Ce site est responsive</p>';
+							} else {
+								echo '<p> Ce site n est pas responsive</p>';
 							} ?>
 					</div>
 				</div>
@@ -176,7 +181,7 @@ while (have_posts()) :
 							<p><?php echo wp_kses_post(get_field('description_realisation')); ?></p>
 							<?php
 							if (get_field('lien_git_hub')) {
-								echo '<p class="lien_git"><a href="'. esc_attr(get_field('lien_git_hub')).'" title="vers git hub de ce site" target="blank"><i class="fa-brands fa-github"></i></a></p>';
+								echo '<p class="lien_git"><a href="' . esc_attr(get_field('lien_git_hub')) . '" title="vers git hub de ce site" target="blank"><i class="fa-brands fa-github"></i></a></p>';
 							} ?>
 						</div>
 					</div>

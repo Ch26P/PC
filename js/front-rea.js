@@ -47,7 +47,6 @@ const filtre_rea = document.querySelector("#list-rea");
 let light = document.querySelector(".shape");
 
 if (filtre_rea.classList.contains("light_off")) {
-    // Siteheader.classList.remove("full");
     filtre_rea.classList.remove("light_off");
     filtre_rea.classList.add("light_on");
    }
@@ -56,21 +55,15 @@ if (filtre_rea.classList.contains("light_off")) {
    }
 
 if (light.classList.contains("light_on")) {
-   // Siteheader.classList.remove("full");
+
 light.classList.remove("light_on");
-//light.classList.add("light_on");
+
   }
   else{
     light.classList.add("light_on");//ajout d'une class
   }
 
 
-   /*     $format = document.getElementById("format").value;
-        $categorie = document.getElementById("categorie").value;
-        $order = document.getElementById("tri").value;
-        $page_number = $page_number + 1;
-        $elem_select = $("#bloc_photos_pag").html();
-*/
 
     });
 
